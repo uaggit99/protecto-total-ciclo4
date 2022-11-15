@@ -4,6 +4,10 @@ import { BuscarPersonaComponent } from './personas/buscar-persona/buscar-persona
 import { CrearPersonaComponent } from './personas/crear-persona/crear-persona.component';
 import { EditarPersonaComponent } from './personas/editar-persona/editar-persona.component';
 import { EliminarPersonaComponent } from './personas/eliminar-persona/eliminar-persona.component';
+import { BuscarPlanesComponent } from './planes/buscar-planes/buscar-planes.component';
+import { CrearPlanesComponent } from './planes/crear-planes/crear-planes.component';
+import { EditarPlanesComponent } from './planes/editar-planes/editar-planes.component';
+import { EliminarPlanesComponent } from './planes/eliminar-planes/eliminar-planes.component';
 
 const routes: Routes = [
 
@@ -22,10 +26,28 @@ const routes: Routes = [
   {
     path:"eliminar-persona",
     component: EliminarPersonaComponent
+  },
+  {
+    path:"crear-planes",
+    component: CrearPlanesComponent
+  },
+{
+    path:"buscar-planes",
+    component: BuscarPlanesComponent
+  },
+  {
+    path:"editar-planes",
+    component: EditarPlanesComponent
+  },
+  {
+    path:"eliminar-planes",
+    component: EliminarPlanesComponent
   }
+
 
   
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
