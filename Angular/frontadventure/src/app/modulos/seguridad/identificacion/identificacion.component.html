@@ -3,9 +3,10 @@
     
     <h2 class="login-header">Log in</h2>
   
-    <form class="login-container">
-      <p><input type="email" placeholder="Email"></p>
-      <p><input type="password" placeholder="Password"></p>
-      <p><input type="submit" value="Log in"></p>
+    <form [formGroup]="fgValidador" (ngSubmit)="identificarUsuario()" class="login-container">
+      <p><input formControlName = "usuario" type="email" placeholder="Email"></p>
+      <p><input
+        formControlName= "clave" type="password" placeholder="Password"></p>
+      <p><button [disabled]="" type="submit">Enviar </button></p>
     </form>
   </div>
