@@ -7,6 +7,14 @@
       <p><input formControlName = "usuario" type="email" placeholder="Email"></p>
       <p><input
         formControlName= "clave" type="password" placeholder="Password"></p>
-      <p><button [disabled]="" type="submit">Enviar </button></p>
+      <p><button [disabled]="!fgValidador.valid" type="submit" name="action">Enviar </button></p>
+      <div class="row">
+        <div class="input-field col s12">
+            <button [disabled]="!fgValidador.valid" class="btn waves-effect waves-light col s12" 
+            type="submit"  name="action">Ingresar</button>
+                <!--(click)="IdentificarUsuario"-->
+        </div>
+    </div>
     </form>
+
   </div>
