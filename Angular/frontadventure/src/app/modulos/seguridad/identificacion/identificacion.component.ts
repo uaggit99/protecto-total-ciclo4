@@ -25,12 +25,12 @@ export class IdentificacionComponent implements OnInit {
   ngOnInit(): void {
 
   }
-  identificarUsuario() {
+  IdentificarUsuario() {
     let usuario = this.fgValidador.controls["usuario"].value;
     let clave = this.fgValidador.controls["clave"].value;
     let claveCifrada = cryptoJS.MD5(clave).toString();
     this.servicioSeguridad.Identificar(usuario, claveCifrada).subscribe((datos:any)=> {
-      //ok
+      this.servicioSeguridad.AlmacenarSesion(datos);
       alert("datos correctos")
     },(error:any)=>{
       //ok
