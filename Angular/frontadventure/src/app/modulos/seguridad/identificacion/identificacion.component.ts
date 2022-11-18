@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { from } from 'rxjs';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 import * as cryptoJS from "crypto-js";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-identificacion',
@@ -18,7 +19,8 @@ export class IdentificacionComponent implements OnInit {
   });
 
   constructor(private fb: FormBuilder,
-    private servicioSeguridad: SeguridadService) {
+    private servicioSeguridad: SeguridadService,
+    private router :Router) {
 
   }
 
@@ -29,10 +31,11 @@ export class IdentificacionComponent implements OnInit {
     let usuario = this.fgValidador.controls["usuario"].value;
     let clave = this.fgValidador.controls["clave"].value;
     let claveCifrada = cryptoJS.MD5(clave).toString();
-    this.servicioSeguridad.Identificar(usuario, claveCifrada).subscribe((datos:any)=> {
+    this.servicioSeguridad.Identificar(usuario, claveCifrada).subscribe((datos: any) => {
       this.servicioSeguridad.AlmacenarSesion(datos);
+      this.router.navigate(["/inicio"]);
       alert("datos correctos")
-    },(error:any)=>{
+    }, (error: any) => {
       //ok
       alert("datos NO validos")
 
