@@ -1,7 +1,7 @@
-export class ModeloDatos{
+export class ModeloDatos {
     id?: String;
     nombre?: String;
-    correo? : String ;
-    valor ? : string ;
-    atracionesValidas
+    correo?: String;
+    valor?: string;
+    atracionesvalidas?: string;
 }

@@ -15,11 +15,11 @@ export class BarraNavegacionComponent implements OnInit {
   subs: Subscription = new Subscription();
 
 
-  constructor(private seguridadServicio: SeguridadService ) { }
+  constructor(private seguridadServicio: SeguridadService) { }
 
   ngOnInit(): void {
-    this.subs = this.seguridadServicio.ObtenerDatosUsuarioEnSesion().subscribe((datos: ModeloIdentificar)=>{
-     this. seInicioSesion=datos.estaIdentificado
+    this.subs = this.seguridadServicio.ObtenerDatosUsuarioEnSesion().subscribe((datos: ModeloIdentificar) => {
+      this.seInicioSesion = datos.estaIdentificado
     })
   }
 
