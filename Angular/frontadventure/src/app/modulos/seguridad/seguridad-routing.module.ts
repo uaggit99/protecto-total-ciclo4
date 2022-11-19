@@ -11,10 +11,10 @@ const routes: Routes = [
     component : IdentificacionComponent
   },
   {
-    path :'cambio-clave',
+    path :'cambioClave',
     component :CambioClaveComponent
   },{
-    path: 'recuperar-calve',
+    path: 'recuperar-clave',
     component : RecuperarClaveComponent
   },
   {
