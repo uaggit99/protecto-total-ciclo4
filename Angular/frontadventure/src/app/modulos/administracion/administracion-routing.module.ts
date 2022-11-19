@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BuscarPersonaComponent } from './personas/buscar-persona/buscar-persona.component';
 import { CrearPersonaComponent } from './personas/crear-persona/crear-persona.component';
@@ -28,20 +28,22 @@ const routes: Routes = [
     component: EliminarPersonaComponent
   },
   {
-    path:"crear-planes",
+    path:"crear-plan",
     component: CrearPlanesComponent
   },
-{
-    path:"buscar-planes",
-    component: BuscarPlanesComponent
-  },
+
   {
-    path:"editar-planes",
+    path:"editar-plan",
     component: EditarPlanesComponent
   },
   {
-    path:"eliminar-planes",
+    path:"eliminar-plan",
     component: EliminarPlanesComponent
+  },
+  {
+    path:'listado-plan',
+    component: BuscarPlanesComponent
+
   }
 
 
