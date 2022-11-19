@@ -10,6 +10,10 @@ import { CrearPlanesComponent } from './planes/crear-planes/crear-planes.compone
 import { EditarPlanesComponent } from './planes/editar-planes/editar-planes.component';
 import { BuscarPlanesComponent } from './planes/buscar-planes/buscar-planes.component';
 import { EliminarPlanesComponent } from './planes/eliminar-planes/eliminar-planes.component';
+import { CrearPlanComponent } from './planes/crear-plan/crear-plan.component';
+import { EditarPlanComponent } from './planes/editar-plan/editar-plan.component';
+import { BuscarPlanComponent } from './planes/buscar-plan/buscar-plan.component';
+import { EliminarPlanComponent } from './planes/eliminar-plan/eliminar-plan.component';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { EliminarPlanesComponent } from './planes/eliminar-planes/eliminar-plane
     CrearPlanesComponent,
     EditarPlanesComponent,
     BuscarPlanesComponent,
-    EliminarPlanesComponent
+    EliminarPlanesComponent,
+    CrearPlanComponent,
+    EditarPlanComponent,
+    BuscarPlanComponent,
+    EliminarPlanComponent
   ],
   imports: [
     CommonModule,

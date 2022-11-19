@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, VirtualTimeScheduler } from 'rxjs';
 import { ModeloPlanes } from '../modelos/planes.modelo';
 import { SeguridadService } from './seguridad.service';
 
@@ -29,4 +29,12 @@ export class PlanesService {
       })
     })
   }
+  EliminarPlan(id: string): Observable<any>{
+    return this.http.delete(`${this.url}/plans/${id}`,{
+    headers : new HttpHeaders({
+      'Autorizacion': `Bearer ${this.token}`
+    })
+  })
+}
+
 }
