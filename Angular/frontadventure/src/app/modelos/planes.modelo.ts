@@ -3,5 +3,5 @@ export class ModeloPlanes{
     nombre? :string;
     color? : string;
     valor? : string;
-    atraccionesvalidas? : string
+    atraccionesvalidas? : string;
 }

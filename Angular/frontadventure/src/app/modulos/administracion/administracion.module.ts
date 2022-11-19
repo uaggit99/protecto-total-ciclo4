@@ -10,6 +10,7 @@ import { CrearPlanComponent } from './planes/crear-plan/crear-plan.component';
 import { EditarPlanComponent } from './planes/editar-plan/editar-plan.component';
 import { BuscarPlanComponent } from './planes/buscar-plan/buscar-plan.component';
 import { EliminarPlanComponent } from './planes/eliminar-plan/eliminar-plan.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +27,9 @@ import { EliminarPlanComponent } from './planes/eliminar-plan/eliminar-plan.comp
   ],
   imports: [
     CommonModule,
-    AdministracionRoutingModule
+    AdministracionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdministracionModule { }

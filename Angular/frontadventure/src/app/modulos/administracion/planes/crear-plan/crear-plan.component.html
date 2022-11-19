@@ -1,1 +1,27 @@
-<p>crear-plan works!</p>
+<div class="signupFrm">
+    <form [formGroup]="fgvalidador" (ngSubmit)="guardarplan()" method="POST" action="" class="form">
+        <h1 class="title">Registro de Plan</h1>
+
+        <div class="inputContainer">
+            <input formControlName="nombre" type="text" class="input" placeholder="a">
+            <label for="" class="label">nombre</label>
+        </div>
+
+        <div class="inputContainer">
+            <input formControlName="color" type="text" class="input" placeholder="a">
+            <label for="" class="label">Color</label>
+        </div>
+
+        <div class="inputContainer">
+            <input formControlName="valor" type="text" class="input" placeholder="a">
+            <label for="" class="label">Valor</label>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="atraccionesvalidas" type="text" class="input" placeholder="a">
+            <label for="" class="label">Atracciones</label>
+        </div>
+        <button [disabled]="!fgvalidador.valid" class="btn waves-effect waves-light col s12" type="submit"
+            name="action">Ingresar</button>
+        <link type="text/css" href="" />
+    </form>
+</div>

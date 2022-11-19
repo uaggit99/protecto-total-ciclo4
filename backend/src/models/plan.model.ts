@@ -36,7 +36,7 @@ export class Plan extends Entity {
 
   @property({
     type: 'string',
-    required: true,
+    required: false,
   })
   id_parque: string;
 

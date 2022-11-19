@@ -8,7 +8,7 @@ import { PlanesService } from 'src/app/servicios/planes.service';
   styleUrls: ['./buscar-plan.component.css']
 })
 export class BuscarPlanComponent implements OnInit {
-  listadoPlanes: ModeloPlanes[] = []
+  listadoPlanes: ModeloPlanes[] = [];
 
   constructor(private planesServicio: PlanesService) { }
 
