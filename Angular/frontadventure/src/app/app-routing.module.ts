@@ -22,10 +22,7 @@ const routes: Routes = [
     path:'administracion',
     loadChildren :() => import("./modulos/administracion/administracion.module").then (x=> x.AdministracionModule) 
    },
-   {
-    path:'compras',
-    loadChildren :() => import("./modulos/compras/compras.module").then (x=> x.ComprasModule) 
-   },
+   
   {
     path:'**',
     component : ErrorComponent //redirecion de rutas  que no existen

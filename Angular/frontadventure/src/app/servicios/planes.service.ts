@@ -14,7 +14,7 @@ export class PlanesService {
 
   constructor(private http: HttpClient,
     private servicioSeguridad: SeguridadService) {
-    this.token = this.servicioSeguridad.Ob
+    this.token = this.servicioSeguridad.ObtenerToken();
   }
 
   Obtenerregistros(): Observable<ModeloPlanes[]> {

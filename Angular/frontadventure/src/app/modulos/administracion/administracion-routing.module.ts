@@ -4,50 +4,54 @@ import { BuscarPersonaComponent } from './personas/buscar-persona/buscar-persona
 import { CrearPersonaComponent } from './personas/crear-persona/crear-persona.component';
 import { EditarPersonaComponent } from './personas/editar-persona/editar-persona.component';
 import { EliminarPersonaComponent } from './personas/eliminar-persona/eliminar-persona.component';
-import { BuscarPlanesComponent } from './planes/buscar-planes/buscar-planes.component';
-import { CrearPlanesComponent } from './planes/crear-planes/crear-planes.component';
-import { EditarPlanesComponent } from './planes/editar-planes/editar-planes.component';
-import { EliminarPlanesComponent } from './planes/eliminar-planes/eliminar-planes.component';
+import { BuscarPlanComponent } from './planes/buscar-plan/buscar-plan.component';
+
+import { CrearPlanComponent } from './planes/crear-plan/crear-plan.component';
+
+import { EditarPlanComponent } from './planes/editar-plan/editar-plan.component';
+
+import { EliminarPlanComponent } from './planes/eliminar-plan/eliminar-plan.component';
+
 
 const routes: Routes = [
 
   {
-    path:"crear-persona",
+    path: "crear-persona",
     component: CrearPersonaComponent
   },
-{
-    path:"buscar-persona",
+  {
+    path: "personas",
     component: BuscarPersonaComponent
   },
   {
-    path:"editar-persona",
+    path: "editar-persona",
     component: EditarPersonaComponent
   },
   {
-    path:"eliminar-persona",
+    path: "eliminar-persona",
     component: EliminarPersonaComponent
   },
   {
-    path:"crear-plan",
-    component: CrearPlanesComponent
+    path: "crear-plan",
+    component: CrearPlanComponent
   },
 
   {
-    path:"editar-plan",
-    component: EditarPlanesComponent
+    path: "editar-plan",
+    component: EditarPlanComponent
   },
   {
-    path:"eliminar-plan",
-    component: EliminarPlanesComponent
+    path: "eliminar-plan",
+    component: EliminarPlanComponent
   },
   {
-    path:'listado-plan',
-    component: BuscarPlanesComponent
+    path: "planes",
+    component: BuscarPlanComponent
 
   }
 
 
-  
+
 ];
 
 
