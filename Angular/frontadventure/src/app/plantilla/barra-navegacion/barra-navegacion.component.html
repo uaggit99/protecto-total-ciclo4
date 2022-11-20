@@ -1,7 +1,8 @@
-<p>barra-navegacion works!</p>
+<h2>Adventure Park</h2>
 <nav>
   <div class="nav-wrapper">
-    <a routerLink="/inicio" class="brand-logo">Logo</a>
+    
+    <a routerLink="/inicio" class="brand-logo"> </a>
     <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li *ngIf="seInicioSesion"><a routerLink="/administracion/personas">Personas</a></li>
@@ -12,6 +13,11 @@
     </ul>
   </div>
 </nav>
+<div  >
+<img class="centrado"src="https://i0.wp.com/lopezdoriga.com/wp-content/uploads/2018/11/20181101-153447.jpg?w=2000&ssl=1" widht=700px
+  height="450px" >
+</div>
+
 
 <ul class="sidenav" id="mobile-demo">
   <li *ngIf="seInicioSesion"><a routerLink="/administracion/personas">Personas</a></li>

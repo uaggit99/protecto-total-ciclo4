@@ -1,0 +1,28 @@
+.brand-logo {
+    color: blueviolet font-size 200x;
+}
+
+.nav-wrapper {
+    color: blue;
+}
+
+.centrado {
+    display: block;
+    margin: auto;
+    border-color: aqua;
+    border-radius: 30x;
+}
+h2{
+    text-align: center;
+    word-spacing: 10px;
+    color: rgb(36, 36, 216);
+    text-shadow: 4px 4px #FFFF9B;
+    font-family: 'Brush Script MT', cursive;
+    font-size: 90px;
+}
+a{
+    color: white;
+    font-weight: bold;
+    font-family: Lucida ;
+    font-size: 18px;
+}
