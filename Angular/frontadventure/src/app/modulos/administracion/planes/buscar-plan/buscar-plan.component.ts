@@ -13,6 +13,7 @@ export class BuscarPlanComponent implements OnInit {
   constructor(private planesServicio: PlanesService) { }
 
   ngOnInit(): void {
+    this.ObtenerListadoPlanes();
   }
   ObtenerListadoPlanes() {
     this.planesServicio.Obtenerregistros().subscribe((datos: ModeloPlanes[]) => {

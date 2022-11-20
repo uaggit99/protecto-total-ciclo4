@@ -21,6 +21,11 @@ export class PlanesService {
     return this.http.get<ModeloPlanes[]>(`${this.url}/plans`)
 
   }
+
+  ObtenerregistrosporId(id: string): Observable<ModeloPlanes> {
+    return this.http.get<ModeloPlanes>(`${this.url}/plans/${id}`)
+
+  }
   CrearPlan(plan: ModeloPlanes): Observable<ModeloPlanes> {
     return this.http.post<ModeloPlanes>(`${this.url}/plans`, plan, {
       headers: new HttpHeaders({
@@ -29,12 +34,20 @@ export class PlanesService {
       })
     })
   }
-  EliminarPlan(id: string): Observable<any>{
-    return this.http.delete(`${this.url}/plans/${id}`,{
-    headers : new HttpHeaders({
-      'Autorizacion': `Bearer ${this.token}`
+  ActualizarPlan(plan: ModeloPlanes): Observable<ModeloPlanes> {
+    return this.http.put<ModeloPlanes>(`${this.url}/plans/${plan.id}`,plan, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
     })
-  })
-}
+  }
+
+  EliminarPlan(id: string): Observable<any> {
+    return this.http.delete(`${this.url}/plans/${id}`, {
+      headers: new HttpHeaders({
+        'Autorizacion': `Bearer ${this.token}`
+      })
+    })
+  }
 
 }

@@ -38,10 +38,10 @@ export class CrearPlanComponent implements OnInit {
     p.valor = valor;
     p.atraccionesvalidas = atraccionesvalidas;
     this.servicioPlanes.CrearPlan(p).subscribe((datos: ModeloPlanes) => {
-      alert("Producto Registrado Correctamente");
+      alert("Plan Registrado Correctamente");
       this.router.navigate(["/administracion/planes"])
     }, (error: any) => {
-      alert("Error en el registro del producto");
+      alert("Error en el registro del plan");
     })
   }
 

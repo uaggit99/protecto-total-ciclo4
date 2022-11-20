@@ -1,1 +1,28 @@
-<p>editar-plan works!</p>
+<div class="signupFrm">
+    <form [formGroup]="fgvalidador" (ngSubmit)="editarplan()" method="POST" action="" class="form">
+        <input type="hidden" formControlName="id" />
+        <h1 class="title">Registro de Plan</h1>
+
+        <div class="inputContainer">
+            <input formControlName="nombre" type="text" class="input" placeholder="a">
+            <label for="" class="active">nombre</label>
+        </div>
+
+        <div class="inputContainer">
+            <input formControlName="color" type="text" class="input" placeholder="a">
+            <label for="" class="active">Color</label>
+        </div>
+
+        <div class="inputContainer">
+            <input formControlName="valor" type="text" class="input" placeholder="a">
+            <label for="" class="active">Valor</label>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="atraccionesvalidas" type="text" class="input" placeholder="a">
+            <label for="" class="active">Atracciones</label>
+        </div>
+        <button [disabled]="!fgvalidador.valid" class="btn waves-effect waves-light col s12" type="submit"
+            name="action">Ingresar</button>
+        <link type="text/css" href="" />
+    </form>
+</div>
