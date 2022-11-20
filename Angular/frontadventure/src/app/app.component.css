@@ -121,7 +121,7 @@ submitBtn {
   font-weight: 600;
 }
 
-.styled-table {
+.table {
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 1em;
@@ -130,24 +130,20 @@ submitBtn {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.styled-table thead tr {
+.thead ,tr {
   background-color: #980081;
   color: #ffffff;
   text-align: middle;
 }
 
-.styled-table th,
-.styled-table td {
-  padding: 12px 15px;
 
-  .styled-table tbody tr {
+  .tbody tr, {
     border-bottom: 1px solid #dddddd;
   }
 
-  .styled-table tbody tr:nth-of-type(even) {
+  .tbody ,tr{
     background-color: #f3f3f3;
   }
-
-  .styled-table tbody tr:last-of-type {
+.tbody ,tr{
     border-bottom: 2px solid #009879;
   }

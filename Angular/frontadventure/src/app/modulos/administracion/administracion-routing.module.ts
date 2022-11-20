@@ -38,7 +38,7 @@ const routes: Routes = [
     component: EditarPlanComponent
   },
   {
-    path: "eliminar-plan",
+    path: "eliminar-plan/:id",
     component: EliminarPlanComponent
   },
   {
