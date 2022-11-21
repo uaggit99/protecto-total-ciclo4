@@ -7,7 +7,7 @@ import { BarraNavegacionComponent } from './plantilla/barra-navegacion/barra-nav
 import { BarraPiePaginaComponent } from './plantilla/barra-pie-pagina/barra-pie-pagina.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
 import { ErrorComponent } from './plantilla/error/error.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,8 @@ import {HttpClientModule} from '@angular/common/http'
     BarraNavegacionComponent,
     BarraPiePaginaComponent,
     InicioComponent,
-    ErrorComponent
+    ErrorComponent,
+    
   ],
   imports: [
     BrowserModule,

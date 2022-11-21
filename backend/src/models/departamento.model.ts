@@ -1,5 +1,5 @@
-import {Entity, model, property, hasMany} from '@loopback/repository';
-import {Ciudad} from './ciudad.model';
+import { Entity, model, property, hasMany } from '@loopback/repository';
+import { Ciudad } from './ciudad.model';
 
 @model()
 export class Departamento extends Entity {
@@ -10,11 +10,18 @@ export class Departamento extends Entity {
   })
   id?: string;
 
+
   @property({
     type: 'string',
     required: true,
   })
   nombre: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  imagen: string;
 
   @hasMany(() => Ciudad)
   ciudads: Ciudad[];

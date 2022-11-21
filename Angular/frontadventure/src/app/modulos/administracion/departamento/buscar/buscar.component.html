@@ -1,0 +1,23 @@
+<a routerLink="/administracion/crear-departamento" class="btn">Nuevo Departamento</a>
+<table class="table response">
+    <thead class="cabecera">
+        <tr>
+            <th>NOMBRE</th>
+            <th>IMAGEN</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of listadodepartamento">
+            <td>{{m.nombre}}</td>
+            <td><img src="{{m.imagen}}" class="imagenproducto"/></td>
+
+            <td>
+                <a routerLink="/administracion/editar-departamento/{{this.m.id}}" class="btn">Editar Departamento</a>
+            </td>
+
+
+        </tr>
+    </tbody>
+</table>

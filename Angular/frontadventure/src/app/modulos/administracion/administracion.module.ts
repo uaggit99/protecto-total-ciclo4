@@ -11,6 +11,9 @@ import { EditarPlanComponent } from './planes/editar-plan/editar-plan.component'
 import { BuscarPlanComponent } from './planes/buscar-plan/buscar-plan.component';
 import { EliminarPlanComponent } from './planes/eliminar-plan/eliminar-plan.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CrearComponent } from './departamento/crear/crear.component';
+import { EditarComponent } from './departamento/editar/editar.component';
+import { BuscarComponent } from './departamento/buscar/buscar.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CrearPlanComponent,
     EditarPlanComponent,
     BuscarPlanComponent,
-    EliminarPlanComponent
+    EliminarPlanComponent,
+    CrearComponent,
+    EditarComponent,
+    BuscarComponent
   ],
   imports: [
     CommonModule,

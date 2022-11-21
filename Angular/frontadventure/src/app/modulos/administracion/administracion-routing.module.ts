@@ -1,5 +1,8 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BuscarComponent } from './departamento/buscar/buscar.component';
+import { CrearComponent } from './departamento/crear/crear.component';
+import { EditarComponent } from './departamento/editar/editar.component';
 import { BuscarPersonaComponent } from './personas/buscar-persona/buscar-persona.component';
 import { CrearPersonaComponent } from './personas/crear-persona/crear-persona.component';
 import { EditarPersonaComponent } from './personas/editar-persona/editar-persona.component';
@@ -45,10 +48,21 @@ const routes: Routes = [
     path: "planes",
     component: BuscarPlanComponent
 
+  },
+  {
+    path: "crear-departamento",
+    component : CrearComponent
+    
+  },
+  {
+    path:"buscar-departamento",
+    component : BuscarComponent
+    
+  },
+  {
+    path : "editar-departamento/:id",
+    component : EditarComponent
   }
-
-
-
 ];
 
 
