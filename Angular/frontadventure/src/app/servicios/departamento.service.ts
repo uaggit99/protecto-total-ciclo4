@@ -11,12 +11,12 @@ export class DepartamentoService {
 
   url = 'http://localhost:3000';
   token: string = '';
-  
+
 
   constructor(private http: HttpClient,
-    private servicioSeguridad: SeguridadService) { 
-      this.token = this.servicioSeguridad.ObtenerToken();
-    }
+    private servicioSeguridad: SeguridadService) {
+    this.token = this.servicioSeguridad.ObtenerToken();
+  }
 
   Obtenerregistros(): Observable<ModeloDepartamento[]> {
     return this.http.get<ModeloDepartamento[]>(`${this.url}/departamentos`)
@@ -35,8 +35,8 @@ export class DepartamentoService {
     return this.http.get<ModeloDepartamento>(`${this.url}/departamentos/${id}`)
 
   }
-  Actualizardepartamento(departamento: ModeloDepartamento): Observable<ModeloDepartamento {
-    return this.http.put<ModeloDepartamento>(`${this.url}/departaemntos/${departamento.id}`,departamento, {
+  Actualizardepartamento(departamento: ModeloDepartamento): Observable<ModeloDepartamento> {
+    return this.http.put<ModeloDepartamento>(`${this.url}/departamentos/${departamento.id}`, departamento, {
       headers: new HttpHeaders({
         'Authorization': `Bearer ${this.token}`
       })

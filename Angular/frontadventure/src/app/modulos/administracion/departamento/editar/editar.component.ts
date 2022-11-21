@@ -15,9 +15,9 @@ export class EditarComponent implements OnInit {
   fgvalidador: FormGroup = this.fb.group({
     'id': ['', [Validators.required]],
     'nombre': ['', [Validators.required]],
-    'imagen': ['', [Validators.required]],
-    'valor': ['', [Validators.required]],
-  })
+    'imagen': ['', [Validators.required]]
+
+  });
 
 
 
@@ -27,14 +27,17 @@ export class EditarComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params["id"];
+    this.buscardepartamento();
+
 
   }
-  Bbuscardepartamento() {
+  buscardepartamento() {
     this.servicioDepartamento.ObtenerregistrosporId(this.id).subscribe((datos: ModeloDepartamento) => {
       this.fgvalidador.controls["id"].setValue(this.id);
       this.fgvalidador.controls["nombre"].setValue(datos.nombre);
       this.fgvalidador.controls["imagen"].setValue(datos.imagen);
-      t
+
     });
   }
   editardepartamento() {
@@ -44,9 +47,9 @@ export class EditarComponent implements OnInit {
     p.nombre = nombre;
     p.imagen = imagen;
     p.id = this.id;
-    this.servicioDepartamento.Actualizardepartamento(p).subscribe((datos: ModeloDepartamento) => {
+    this.servicioDepartamento.Actualizardepartamento(p).subscribe((datos : ModeloDepartamento) => {
       alert("departamento actualizado Correctamente");
-      this.router.navigate(["/administracion/editar-departamento"])
+      this.router.navigate(["/administracion/buscar-departamento"])
     }, (error: any) => {
       alert("Error al actualizar el plan");
     })
