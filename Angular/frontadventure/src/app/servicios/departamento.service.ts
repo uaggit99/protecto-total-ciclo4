@@ -31,4 +31,15 @@ export class DepartamentoService {
       })
     })
   }
+  ObtenerregistrosporId(id: string): Observable<ModeloDepartamento> {
+    return this.http.get<ModeloDepartamento>(`${this.url}/departamentos/${id}`)
+
+  }
+  Actualizardepartamento(departamento: ModeloDepartamento): Observable<ModeloDepartamento {
+    return this.http.put<ModeloDepartamento>(`${this.url}/departaemntos/${departamento.id}`,departamento, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    })
+  }
 }
