@@ -30,4 +30,15 @@ export class ParqueService {
       })
     })
   }
+  ObtenerregistrosporId(id: string): Observable<ModeloParque> {
+    return this.http.get<ModeloParque>(`${this.url}/parques/${id}`)
+
+  }
+  Actualizarparque(parque: ModeloParque): Observable<ModeloParque> {
+    return this.http.put<ModeloParque>(`${this.url}/parques/${parque.id}`,parque, {
+      headers: new HttpHeaders({
+        'Authorization': `Bearer ${this.token}`
+      })
+    })
+  }
 }
