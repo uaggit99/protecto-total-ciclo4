@@ -14,6 +14,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CrearComponent } from './departamento/crear/crear.component';
 import { EditarComponent } from './departamento/editar/editar.component';
 import { BuscarComponent } from './departamento/buscar/buscar.component';
+import { CrearParqueComponent } from './parque/crear-parque/crear-parque.component';
+import { BuscarParqueComponent } from './parque/buscar-parque/buscar-parque.component';
+import { EditarParqueComponent } from './parque/editar-parque/editar-parque.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { BuscarComponent } from './departamento/buscar/buscar.component';
     EliminarPlanComponent,
     CrearComponent,
     EditarComponent,
-    BuscarComponent
+    BuscarComponent,
+    CrearParqueComponent,
+    BuscarParqueComponent,
+    EditarParqueComponent
   ],
   imports: [
     CommonModule,

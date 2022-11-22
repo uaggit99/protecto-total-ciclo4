@@ -1,0 +1,36 @@
+<a routerLink="/administracion/crear-parque" class="btn">Nuevo Parque</a>
+<table class="table response">
+        <thead class="cabecera">
+                <tr>
+                        <th>NOMBRE</th>
+                        <th>DIRECCION</th>
+                        <th>CORREO</th>
+                        <th>TELEFONO</th>
+                        <th>No VISITANTES</th>
+                        <th>LOGO</th>
+                        <th>MAPA</th>
+                        <th>ESLOGAN</th>
+                        <th>DESCRIPCION</th>
+                </tr>
+
+        </thead>
+        <tbody>
+                <tr *ngFor="let p of listadoparque">
+                        <td>{{p.nombre}}</td>
+                        <td>{{p.direccion}}</td>
+                        <td>{{p.correo}}</td>
+                        <td>{{p.telefono}}</td>
+                        <td>{{p.visitantespermitidos}}</td>
+                        <td><img src="{{p.imagenlogo}}" class ="imagenparque"/></td>
+                        <td><img src="{{p.imagenmapa}}" class ="imagenparque"/></td>
+                        <td>{{p.eslogan}}</td>
+                        <td>{{p.descripcion}}</td>
+                        <br>
+                        <td>
+                                <a routerLink="/administracion/editar-parque/{{p.id}}" class="btn">Editar Parque</a>
+                        </td>
+                        
+
+                </tr>
+        </tbody>
+</table>

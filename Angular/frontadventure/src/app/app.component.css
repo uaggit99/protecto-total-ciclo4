@@ -6,7 +6,7 @@ body {
   box-sizing: border-box;
   margin: 10;
   padding: 0;
-  background-color: rgb(145, 23, 23);
+  background-color: rgb(211, 192, 228);
   font-family: "lato", sans-serif;
 }
 
@@ -64,23 +64,13 @@ body {
   left: 15px;
   padding: 0 4px;
   background-color: white;
-  color: #DADCE0;
-  font-size: 16px;
+  color: #10295a;
+  font-size: 17px;
   transition: 0.5s;
   z-index: 0;
 }
 
-.label {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  padding: 0 4px;
-  background-color: white;
-  color: #DADCE0;
-  font-size: 16px;
-  transition: 0.5s;
-  z-index: 0;
-}
+
 
 submitBtn {
   display: block;
@@ -104,7 +94,7 @@ submitBtn {
   top: -7px;
   left: 3px;
   z-index: 10;
-  font-size: 14px;
+  font-size: 30px;
   font-weight: 600;
   color: rgb(0, 128, 17);
 }
@@ -117,14 +107,14 @@ submitBtn {
   top: -7px;
   left: 3px;
   z-index: 10;
-  font-size: 14px;
+  font-size: 30px;
   font-weight: 600;
 }
 
 .table {
   border-collapse: collapse;
   margin: 25px 0;
-  font-size: 1em;
+  font-size: 3em;
   font-family: sans-serif;
   min-width: 450px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -147,3 +137,4 @@ submitBtn {
 .tbody ,tr{
     border-bottom: 2px solid #009879;
   }
+ 

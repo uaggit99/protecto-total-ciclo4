@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { BuscarComponent } from './departamento/buscar/buscar.component';
 import { CrearComponent } from './departamento/crear/crear.component';
 import { EditarComponent } from './departamento/editar/editar.component';
+import { BuscarParqueComponent } from './parque/buscar-parque/buscar-parque.component';
+import { CrearParqueComponent } from './parque/crear-parque/crear-parque.component';
+import { EditarParqueComponent } from './parque/editar-parque/editar-parque.component';
 import { BuscarPersonaComponent } from './personas/buscar-persona/buscar-persona.component';
 import { CrearPersonaComponent } from './personas/crear-persona/crear-persona.component';
 import { EditarPersonaComponent } from './personas/editar-persona/editar-persona.component';
@@ -62,7 +65,20 @@ const routes: Routes = [
   {
     path : "editar-departamento/:id",
     component : EditarComponent
-  }
+  },
+  {
+    path: "buscar-parque",
+    component : BuscarParqueComponent
+  },
+  {
+    path: "crear-parque",
+    component : CrearParqueComponent
+  },
+  {
+    path: "editar-parque/:id",
+    component : EditarParqueComponent
+  },
+
 ];
 
 

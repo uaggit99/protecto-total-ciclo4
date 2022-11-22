@@ -1,0 +1,47 @@
+<div class="signupFrm">
+    <form [formGroup]="fgvalidador" (ngSubmit)="guardarparque()" method="POST" action="" class="form">
+        <h1 class="title">Registro de Parque</h1>
+
+        <div class="inputContainer">
+            <input formControlName="nombre" type="text" class="input" placeholder="a">
+            <label for="" class="label">nombre</label>
+        </div>
+
+        <div class="inputContainer">
+            <input formControlName="direccion" type="text" class="input" placeholder="a">
+            <label for="" class="label">Direccion</label>
+        </div>
+
+        <div class="inputContainer">
+            <input formControlName="correo" type="text" class="input" placeholder="a">
+            <h4><label for="" class="label">Correo</label></h4>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="telefono" type="text" class="input" placeholder="a">
+            <label for="" class="label">Telefono</label>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="visitantespermitidos" type="text" class="input" placeholder="a">
+            <label for="" class="label">No Visitantes</label>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="imagenlogo" type="text" class="input" placeholder="a">
+            <label for="" class="label">Logo</label>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="imagenmapa" type="text" class="input" placeholder="a">
+            <label for="" class="label">Mapa</label>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="eslogan" type="text" class="input" placeholder="a">
+            <label for="" class="label">Eslogan</label>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="descripcion" type="text" class="input" placeholder="a">
+            <label for="" class="label">Descripcion</label>
+        </div>
+        <button [disabled]="!fgvalidador.valid" class="btn waves-effect waves-light col s12" type="submit"
+            name="action"><h6>Ingresar</h6></button>
+        <link type="text/css" href="" />
+    </form>
+</div>
