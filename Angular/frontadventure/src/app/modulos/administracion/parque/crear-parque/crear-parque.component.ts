@@ -34,7 +34,7 @@ export class CrearParqueComponent implements OnInit {
     let direccion = this.fgvalidador.controls["direccion"].value;
     let correo = this.fgvalidador.controls["correo"].value;
     let telefono = this.fgvalidador.controls["telefono"].value;
-    let visitantespermitidos = this.fgvalidador.controls["visitantespermitidos"].value;
+    let visitantespermitidos =String(this.fgvalidador.controls["visitantespermitidos"].value);
     let imagenlogo = this.fgvalidador.controls["imagenlogo"].value;
     let imagenmapa = this.fgvalidador.controls["imagenmapa"].value;
     let eslogan = this.fgvalidador.controls["eslogan"].value;

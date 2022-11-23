@@ -11,8 +11,11 @@ import { PlanesService } from 'src/app/servicios/planes.service';
   styleUrls: ['./editar-parque.component.css']
 })
 export class EditarParqueComponent implements OnInit {
+
   id: string = '';
+
   fgvalidador: FormGroup = this.fb.group({
+    'id': ['', [Validators.required]],
     'nombre': ['', [Validators.required]],
     'direccion': ['', [Validators.required]],
     'correo': ['', [Validators.required]],
@@ -30,21 +33,24 @@ export class EditarParqueComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params["id"];
+    this.buscarparque();
   }
 
   buscarparque() {
     this.servicioParque.ObtenerregistrosporId(this.id).subscribe((datos: ModeloParque) => {
-
-      let nombre = this.fgvalidador.controls["nombre"].value;
-      let direccion = this.fgvalidador.controls["direccion"].value;
-      let correo = this.fgvalidador.controls["correo"].value;
-      let telefono = this.fgvalidador.controls["telefono"].value;
-      let visitantespermitidos = this.fgvalidador.controls["visitantespermitidos"].value;
-      let imagenlogo = this.fgvalidador.controls["imagenlogo"].value;
-      let imagenmapa = this.fgvalidador.controls["imagenmapa"].value;
-      let eslogan = this.fgvalidador.controls["eslogan"].value;
-      let descripcion = this.fgvalidador.controls["descripcion"].value;
+      this.fgvalidador.controls["id"].setValue(this.id);
+      this.fgvalidador.controls["nombre"].setValue(datos.nombre);
+      this.fgvalidador.controls["direccion"].setValue(datos.direccion);
+      this.fgvalidador.controls["correo"].setValue(datos.correo);
+      this.fgvalidador.controls["telefono"].setValue(datos.telefono);
+      this.fgvalidador.controls["visitantespermitidos"].setValue(datos.visitantespermitidos);
+      this.fgvalidador.controls["imagenlogo"].setValue(datos.imagenlogo);
+      this.fgvalidador.controls["imagenmapa"].setValue(datos.imagenmapa);
+      this.fgvalidador.controls["eslogan"].setValue(datos.eslogan);
+      this.fgvalidador.controls["descripcion"].setValue(datos.descripcion);
     });
+
   }
   editarparque() {
     let nombre = this.fgvalidador.controls["nombre"].value;
@@ -69,7 +75,7 @@ export class EditarParqueComponent implements OnInit {
     p.id = this.id;
     this.servicioParque.Actualizarparque(p).subscribe((datos: ModeloParque) => {
       alert("Parque actualizado Correctamente");
-      this.router.navigate(["/administracion/planes"])
+      this.router.navigate(["/administracion/buscar-parque"])
     }, (error: any) => {
       alert("Error al actualizar el Parque");
     })
