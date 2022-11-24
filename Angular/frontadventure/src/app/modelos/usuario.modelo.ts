@@ -7,7 +7,6 @@ export class ModeloUsuario{
     correo? : string;
     cargo? : string;
     celular? : string;
-    clave?: string;
-
-
+    foto? : string;
+   
 }

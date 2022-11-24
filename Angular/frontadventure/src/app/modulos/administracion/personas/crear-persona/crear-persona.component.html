@@ -1,1 +1,48 @@
-<p>crear-persona works!</p>
+<div class="signupFrm">
+    <form [formGroup]="fgvalidador" (ngSubmit)="guardarpersona()" method="POST" action="" class="form">
+        <h1 class="title">Registro de Usuario</h1>
+
+        <div class="inputContainer">
+            <input formControlName="fecha" type="date" class="input" placeholder="a">
+            <label for="" class="label">Fecha</label>
+        </div>
+
+
+        <div class="inputContainer">
+            <input formControlName="nombres" type="text" class="input" placeholder="a">
+            <label for="" class="label">Nombres</label>
+        </div>
+
+        <div class="inputContainer">
+            <input formControlName="apellidos" type="text" class="input" placeholder="a">
+            <label for="" class="label">Apellidos</label>
+        </div>
+
+        <div class="inputContainer">
+            <input formControlName="documento" type="text" class="input" placeholder="a">
+            <h4><label for="" class="label">Documento</label></h4>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="correo" type="text" class="input" placeholder="a">
+            <label for="" class="label">Correo</label>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="cargo" type="text" class="input" placeholder="a">
+            <label for="" class="label">Cargo</label>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="celular" type="text" class="input" placeholder="a">
+            <label for="" class="label">Celular</label>
+        </div>
+        <div class="inputContainer">
+            <input formControlName="foto" type="text" class="input" placeholder="a">
+            <label for="" class="label">Foto</label>
+        </div>
+
+
+
+        <button [disabled]="!fgvalidador.valid" class="btn waves-effect waves-light col s12" type="submit"
+            name="action">Ingresar</button>
+        <link type="text/css" href="" />
+    </form>
+</div>

@@ -1,1 +1,38 @@
+<a routerLink="/administracion/crear-persona" class="btn">Nuevo Usuario</a>
+<table class="table response">
+    <thead class="cabecera">
+        <tr>
+            <th>FECHA</th>
+            <th>NOMBREs</th>
+            <th>APELLIDOS</th>
+            <th>DOCUMENTO</th>
+            <th>CORREO</th>
+            <th>CARGO</th>
+            <th>CELULAR</th>
+            <th>FOTO</th>
+            
+            
+        </tr>
 
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of listadopersona">
+            <td>{{p.fecha}}</td>
+            <td>{{p.nombres}}</td>
+            <td>{{p.apellidos}}</td>
+            <td>{{p.documento}}</td>
+            <td>{{p.correo}}</td>
+            <td>{{p.cargo}}</td>
+            <td>{{p.celular}}</td>
+            <td><img src="{{p.foto}}" class="imagenproducto"/></td>
+            
+            <td>
+                <a routerLink="/administracion/editar-persona/{{p.id}}" class="btn">Editar Usuario</a>
+            </td>
+            <td>
+                <a routerLink="/administracion/eliminar-persona/{{p.id}}" class="btn">Eliminar Usuario</a>
+            </td>
+
+        </tr>
+    </tbody>
+</table>
