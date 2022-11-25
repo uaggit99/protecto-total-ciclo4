@@ -9,6 +9,7 @@ const routes: Routes = [
   {
     path:'identificacion',
     component : IdentificacionComponent
+    
   },
   {
     path :'cambioClave',
