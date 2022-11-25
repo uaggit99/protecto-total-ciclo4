@@ -13,6 +13,9 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 export class CambioClaveComponent implements OnInit {
   clave2 : string ='';
   id2 : string = '';
+  p:ModeloUsuario[]=[];
+  
+
 
   fgValidador: FormGroup = this.fb.group({
     'id': ['',Validators.required],
@@ -43,7 +46,12 @@ export class CambioClaveComponent implements OnInit {
     let data = this.servicioSeguridad.ObtenerInformacionSesion();
     if (data) {
       this.id2= data.id;
-     this.servicioUsuario.ObtenerRegistrosporId(this.id2).subscribe((data :ModeloUsuario)=>{
+      this.ObtenerDatos();   
+
+  }
+}
+  ObtenerDatos(){
+    this.servicioUsuario.ObtenerRegistrosporId(this.id2).subscribe((data :ModeloUsuario)=>{
       let p = new ModeloUsuario();
       p.fecha =data.fecha
       p.nombres= data.nombres;
@@ -51,30 +59,28 @@ export class CambioClaveComponent implements OnInit {
       p.documento =data.documento;
       p.correo =data.correo;
       p.cargo =data.cargo;
-      p.celular = data.celular
+      p.celular = data.celular;
       p.foto = data.foto;
       p.clave =this.claveCifrada;
-      p.id = data.id
+      p.id = data.id;
+    });
+      /*this.servicioUsuario.Actualizarusuario(this.p).subscribe((data: ModeloUsuario) => {
+        alert("clave actualizado Correctamente");
+        this.router.navigate(["/inicio"])
+      }, (error: any) => {
+        alert("Error al actualizar clave");
+      })
+        */
+  
+        }
 
-     });
-
-     this.servicioUsuario.Actualizarusuario(this.p).subscribe((data: ModeloUsuario) => {
-      alert("clave actualizado Correctamente");
-      this.router.navigate(["/administracion/persona"])
-    }, (error: any) => {
-      alert("Error al actualizar clave");
-    })
-      
-
-      }
-    
-
+     
   }
 
-}
+
   
 
 
-}
+
 
 
