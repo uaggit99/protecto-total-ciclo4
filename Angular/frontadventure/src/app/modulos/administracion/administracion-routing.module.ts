@@ -27,11 +27,11 @@ const routes: Routes = [
     component: BuscarPersonaComponent
   },
   {
-    path: "editar-persona",
+    path: "editar-persona/:id",
     component: EditarPersonaComponent
   },
   {
-    path: "eliminar-persona",
+    path: "eliminar-persona/:id",
     component: EliminarPersonaComponent
   },
   {

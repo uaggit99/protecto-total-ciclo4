@@ -35,7 +35,7 @@ export class EditarPersonaComponent implements OnInit {
   }
 
   Buscarusuario() {
-    this.personaServicio.ObtenerregistrosporId(this.id).subscribe((datos: ModeloUsuario) => {
+    this.personaServicio.ObtenerRegistrosporId(this.id).subscribe((datos: ModeloUsuario) => {
       this.fgvalidador.controls["id"].setValue(this.id);
       this.fgvalidador.controls["fecha"].setValue(datos.fecha);
       this.fgvalidador.controls["nombres"].setValue(datos.nombres);
