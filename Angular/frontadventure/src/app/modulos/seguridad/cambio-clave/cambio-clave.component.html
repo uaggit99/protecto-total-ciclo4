@@ -1,1 +1,16 @@
-<p>cambio-clave works!</p>
+<div class="signupFrm">
+    <form [formGroup]="fgValidador" (ngSubmit)="cambioClave()" method="POST" action="" class="form">
+        <input type="hidden" formControlName="id" />
+        <h1 class="title">Actualizar Usuario</h1>
+
+        <div class="inputContainer">
+            <input formControlName="clave" type="date" minlength="8" maxlength="8"class="input" placeholder="a">
+            <label for="" class="active">Nueva clave</label>
+        </div>
+
+        
+        <button [disabled]="!fgValidador.valid" class="btn waves-effect waves-light col s12" type="submit"
+            name="action">Actualizar</button>
+        <link type="text/css" href="" />
+    </form>
+</div>

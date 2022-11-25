@@ -8,5 +8,6 @@ export class ModeloUsuario{
     cargo? : string;
     celular? : string;
     foto? : string;
+    clave? :string;
    
 }

@@ -20,7 +20,8 @@ export class EditarPersonaComponent implements OnInit {
     'correo': ['', [Validators.required]],
     'cargo': ['', [Validators.required]],
     'celular': ['', [Validators.required]],
-    'foto': ['', [Validators.required]]
+    'foto': ['', [Validators.required]],
+    'clave': ['', [Validators.required]]
 
   });
 
@@ -45,6 +46,8 @@ export class EditarPersonaComponent implements OnInit {
       this.fgvalidador.controls["cargo"].setValue(datos.cargo);
       this.fgvalidador.controls["celular"].setValue(datos.celular);
       this.fgvalidador.controls["foto"].setValue(datos.foto);
+      this.fgvalidador.controls["clave"].setValue(datos.clave);
+      
     });
   }
   editarusuario() {
@@ -56,6 +59,9 @@ export class EditarPersonaComponent implements OnInit {
     let cargo = this.fgvalidador.controls["cargo"].value;
     let celular = this.fgvalidador.controls["celular"].value;
     let foto = this.fgvalidador.controls["foto"].value;
+    let clave2 = this.fgvalidador.controls["clave"].value;
+    
+    
     let p = new ModeloUsuario();
     p.fecha =fecha;
     p.nombres = nombres;
@@ -65,6 +71,7 @@ export class EditarPersonaComponent implements OnInit {
     p.cargo = cargo;
     p.celular = celular;
     p.foto = foto;
+    p.clave= clave2;
     p.id = this.id;
     this.personaServicio.Actualizarusuario(p).subscribe((datos: ModeloUsuario) => {
       alert("Usuario actualizado Correctamente");

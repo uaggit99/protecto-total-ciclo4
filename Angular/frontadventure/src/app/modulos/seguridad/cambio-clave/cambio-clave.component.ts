@@ -23,9 +23,11 @@ export class CambioClaveComponent implements OnInit {
     'correo':['',Validators.required],
     'cargo':['',Validators.required],
     'celular':['',Validators.required],
+    'foto':['',Validators.required],
     'clave':['',Validators.required]   
 
   })
+  claveCifrada: string | undefined;
 
   constructor(private fb: FormBuilder, 
     private servicioSeguridad: SeguridadService,
@@ -36,28 +38,39 @@ export class CambioClaveComponent implements OnInit {
   }
 
   cambioClave(){
-    let clave2 = this.fgValidador.controls["clave2"].value;
-    let claveCifrada = CryptoJS.MD5(clave2).toString();
+    let clave = this.fgValidador.controls["clave"].value;
+    let claveCifrada = CryptoJS.MD5(clave).toString();
     let data = this.servicioSeguridad.ObtenerInformacionSesion();
     if (data) {
       this.id2= data.id;
-      this.buscarusuario();
+     this.servicioUsuario.ObtenerRegistrosporId(this.id2).subscribe((data :ModeloUsuario)=>{
+      let p = new ModeloUsuario();
+      p.fecha =data.fecha
+      p.nombres= data.nombres;
+      p.apellidos =data.apellidos;
+      p.documento =data.documento;
+      p.correo =data.correo;
+      p.cargo =data.cargo;
+      p.celular = data.celular
+      p.foto = data.foto;
+      p.clave =this.claveCifrada;
+      p.id = data.id
+
+     });
+
+     this.servicioUsuario.Actualizarusuario(this.p).subscribe((data: ModeloUsuario) => {
+      alert("clave actualizado Correctamente");
+      this.router.navigate(["/administracion/persona"])
+    }, (error: any) => {
+      alert("Error al actualizar clave");
+    })
+      
+
       }
     
 
   }
-buscarusuario(){
-    this.servicioUsuario.ObtenerRegistrosporId(this.id2).subscribe((datos: ModeloUsuario) => {
-    this.fgValidador.controls["id"].setValue(this.id2);
-    this.fgValidador.controls["fecha"].setValue(datos.fecha);
-    this.fgValidador.controls["nombres"].setValue(datos.nombres);
-    this.fgValidador.controls["apellidos"].setValue(datos.apellidos);
-    this.fgValidador.controls["documento"].setValue(datos.documento);
-    this.fgValidador.controls["correo"].setValue(datos.correo);
-    this.fgValidador.controls["cargo"].setValue(datos.cargo);
-    this.fgValidador.controls["celular"].setValue(datos.celular);
-    this.fgValidador.controls["foto"].setValue(datos.foto);
-  });
+
 }
   
 
